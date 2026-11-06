@@ -12,7 +12,7 @@ jobs:
   extension:
     permissions:
       contents: write
-    uses: ClementWalter/mcp-bridge/.github/workflows/extension.yml@6347c4bd7ac55ac8bf3e757c972ea2d3ca81efe5
+    uses: ClementWalter/mcp-bridge/.github/workflows/extension.yml@1ec926fd4034b8ab1886a315c608cf2d2e55927a
     with:
       launcher: bin/doctolib
-      bridge-ref: 6347c4bd7ac55ac8bf3e757c972ea2d3ca81efe5
+      bridge-ref: 1ec926fd4034b8ab1886a315c608cf2d2e55927a

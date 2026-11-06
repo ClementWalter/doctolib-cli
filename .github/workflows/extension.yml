@@ -1,0 +1,18 @@
+# Claude Desktop extension: a v* tag publishes doctolib-cli.mcpb on its GitHub release.
+name: extension
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  extension:
+    permissions:
+      contents: write
+    uses: ClementWalter/mcp-bridge/.github/workflows/extension.yml@6347c4bd7ac55ac8bf3e757c972ea2d3ca81efe5
+    with:
+      launcher: bin/doctolib
+      bridge-ref: 6347c4bd7ac55ac8bf3e757c972ea2d3ca81efe5

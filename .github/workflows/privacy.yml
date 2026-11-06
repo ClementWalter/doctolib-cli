@@ -1,0 +1,16 @@
+name: privacy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    uses: ClementWalter/privacy-guard/.github/workflows/scan.yml@0b235adb6262e4f9c5bcd60378beeabc433b859c
+    with:
+      guard-ref: 0b235adb6262e4f9c5bcd60378beeabc433b859c
+    secrets: inherit

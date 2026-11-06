@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/ClementWalter/privacy-guard
+    rev: 0b235adb6262e4f9c5bcd60378beeabc433b859c
+    hooks:
+      - id: privacy-guard
+      - id: privacy-guard-files

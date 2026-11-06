@@ -1,0 +1,32 @@
+{
+  "display_name": "Doctolib",
+  "description": "Read your Doctolib appointments and documents from Claude, and find practitioners with the earliest open slot.",
+  "long_description": "Reads your Doctolib patient account as you: the patients on the account (you and your relatives), your upcoming and past appointments, and the documents practitioners shared with you (prescriptions, invoices, certificates), which it can save to your Mac. Without signing in, it searches practitioners in a city, lists their visit reasons and open slots, and ranks them by earliest availability. It never books or cancels an appointment.\n\nSetup:\n1. In Google Chrome (or Arc, Brave, Edge, Dia), sign in at https://www.doctolib.fr.\n2. In Claude, ask: \"connect my Doctolib account\", then for example \"when is my next appointment?\", \"download my latest prescription\" or \"find a dentist in Paris with a slot this week\".\n\nIf macOS asks to let \"security\" use your browser's Safe Storage key, click Always Allow: that is how the extension reads your Doctolib session. If Claude says no session was found, sign in again at doctolib.fr and ask again. Opening a document marks it as read on Doctolib. Documents are saved in the Download folder from this extension's settings (Downloads/doctolib by default).",
+  "platforms": ["darwin"],
+  "env": {
+    "DOCTOLIB_DOWNLOAD_DIR": "${user_config.download_dir}",
+    "DOCTOLIB_COUNTRY": "${user_config.country}"
+  },
+  "user_config": {
+    "download_dir": {
+      "type": "directory",
+      "title": "Download folder",
+      "description": "Where documents are saved.",
+      "default": "~/Downloads/doctolib",
+      "required": false
+    },
+    "country": {
+      "type": "string",
+      "title": "Doctolib site",
+      "description": "fr, de or it (default fr).",
+      "default": "",
+      "required": false
+    }
+  },
+  "site": {
+    "group": "home",
+    "rank": 35,
+    "needs": ["A Doctolib patient account (only for appointments and documents)", "Signed in at doctolib.fr in Chrome, Arc, Brave, Edge or Dia"],
+    "risk": "unofficial-api"
+  }
+}
